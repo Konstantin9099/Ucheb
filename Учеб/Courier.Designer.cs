@@ -154,7 +154,7 @@ namespace Ucheb
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(187, 20);
             this.label5.TabIndex = 11;
-            this.label5.Text = "Завки на доставке";
+            this.label5.Text = "Заявки на доставке";
             // 
             // label6
             // 
@@ -165,7 +165,7 @@ namespace Ucheb
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(197, 20);
             this.label6.TabIndex = 13;
-            this.label6.Text = "Завершенные завки";
+            this.label6.Text = "Завершенные заявки";
             // 
             // dataGridView3
             // 
