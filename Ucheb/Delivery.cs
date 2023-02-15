@@ -186,6 +186,7 @@ namespace Ucheb
         {
             Application.Exit();
         }
+
         // добавление заказа
         private void button1_Click(object sender, EventArgs e)
         {
@@ -194,13 +195,29 @@ namespace Ucheb
             this.Hide();
             add.Show();
         }
+
         // детали заказа
         private void button4_Click(object sender, EventArgs e)
         {
-            Details det = new Details(ID);
-            det.Owner = this;
-            this.Hide();
-            det.Show();
+            // Проверка, что выбрана строка в таблице доставки.
+            if (dataGridView1.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("Не выбрана строка в таблице данных!");
+                return;
+            }
+            else
+            {
+                int id = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()); // Определяем id
+                DialogResult res = MessageBox.Show($"Посмотреть детали заказа № {id}", "Подтвердите действие", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (res == DialogResult.Yes)
+                {
+                    ChangeOrder.Detali = id.ToString();
+                    Details det = new Details(ID);
+                    det.Owner = this;
+                    this.Hide();
+                    det.Show();
+                }
+            }
         }
 
         // изменение данных заказа
@@ -214,10 +231,10 @@ namespace Ucheb
             this.Hide();
             change.Show();
         }
-
     }
     static class ChangeOrder
     {
         public static string Order { get; set; }
+        public static string Detali { get; set; }
     }
 }

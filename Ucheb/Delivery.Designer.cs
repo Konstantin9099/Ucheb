@@ -77,7 +77,7 @@ namespace Ucheb
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(6, 27);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(131, 21);
+            this.radioButton1.Size = new System.Drawing.Size(129, 20);
             this.radioButton1.TabIndex = 14;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Сначала новые";
@@ -89,7 +89,7 @@ namespace Ucheb
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(6, 62);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(138, 21);
+            this.radioButton2.Size = new System.Drawing.Size(135, 20);
             this.radioButton2.TabIndex = 15;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Сначала старые";
@@ -151,7 +151,7 @@ namespace Ucheb
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(251, 26);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(24, 17);
+            this.label7.Size = new System.Drawing.Size(23, 16);
             this.label7.TabIndex = 6;
             this.label7.Text = "по";
             // 
@@ -160,7 +160,7 @@ namespace Ucheb
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(15, 17);
+            this.label1.Size = new System.Drawing.Size(14, 16);
             this.label1.TabIndex = 5;
             this.label1.Text = "с";
             // 

@@ -63,7 +63,7 @@ namespace Ucheb
                         string date = dateTimePicker1.Value.ToString("yyyy-MM-dd");
                         if (zakaz == "")
                         {
-                            string query = "INSERT INTO delivery (del_date,  del_recive, del_list) VALUES ('" + date + "', '" + ID + "', '" + textBox1.Text + "'); ";
+                            string query = "INSERT INTO delivery (del_date,  del_recive, del_list, del_status) VALUES ('" + date + "', '" + ID + "', '" + textBox1.Text + "', " + 4 + "); ";
                             MySqlConnection conn = DBUtils.GetDBConnection();
                             MySqlCommand cmDB = new MySqlCommand(query, conn);
                             try
@@ -83,7 +83,7 @@ namespace Ucheb
                         }
                         else
                         {
-                            string query = "INSERT INTO delivery (del_date, del_recive, del_list, del_comm) VALUES ('" + date + "', '" + ID + "', '" + textBox1.Text + "', '" + textBox2.Text + "'); ";
+                            string query = "INSERT INTO delivery (del_date, del_recive, del_list, del_comm, del_status) VALUES ('" + date + "', '" + ID + "', '" + textBox1.Text + "', '" + textBox2.Text + "', " + 4 + "); ";
                             MySqlConnection conn = DBUtils.GetDBConnection();
                             MySqlCommand cmDB = new MySqlCommand(query, conn);
                             try

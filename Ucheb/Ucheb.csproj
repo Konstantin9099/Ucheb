@@ -131,12 +131,6 @@
     <Compile Include="Registraciya.Designer.cs">
       <DependentUpon>Registraciya.cs</DependentUpon>
     </Compile>
-    <Compile Include="Statuses.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Statuses.Designer.cs">
-      <DependentUpon>Statuses.cs</DependentUpon>
-    </Compile>
     <Compile Include="DBMySQLUtils.cs" />
     <Compile Include="DBUtils.cs" />
     <Compile Include="Program.cs" />
@@ -161,9 +155,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registraciya.resx">
       <DependentUpon>Registraciya.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Statuses.resx">
-      <DependentUpon>Statuses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
