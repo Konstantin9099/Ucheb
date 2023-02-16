@@ -199,7 +199,7 @@ namespace Ucheb
         // детали заказа
         private void button4_Click(object sender, EventArgs e)
         {
-            // Проверка, что выбрана строка в таблице доставки.
+                       // Проверка, что выбрана строка в таблице доставки.
             if (dataGridView1.SelectedRows.Count < 1)
             {
                 MessageBox.Show("Не выбрана строка в таблице данных!");
@@ -211,11 +211,32 @@ namespace Ucheb
                 DialogResult res = MessageBox.Show($"Посмотреть детали заказа № {id}", "Подтвердите действие", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (res == DialogResult.Yes)
                 {
-                    ChangeOrder.Detali = id.ToString();
-                    Details det = new Details(ID);
-                    det.Owner = this;
-                    this.Hide();
-                    det.Show();
+                    string query = "select del_status, user_name, del_list from delivery, users where users.user_id=delivery.del_recive and del_id=" + id + "; ";
+                    MySqlConnection conn = DBUtils.GetDBConnection();
+                    MySqlCommand cmDB = new MySqlCommand(query, conn);
+
+                    conn.Open();
+                    MySqlCommand command = new MySqlCommand(query, conn);
+                    MySqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        string name = reader["user_name"].ToString();
+                        string deliv = reader["del_list"].ToString();
+                        int status = int.Parse(reader["del_status"].ToString());
+                        if (status == 4)
+                        {
+                            MessageBox.Show($"Заказчик: {name} \nЗаказ: {deliv} \n\nВаш заказ принят, но еще не передан курьеру!");
+                            return;
+                        }
+                        else
+                        {
+                            ChangeOrder.Detali = id.ToString();
+                            Details det = new Details(ID);
+                            det.Owner = this;
+                            this.Hide();
+                            det.Show();
+                        }
+                    }
                 }
             }
         }
